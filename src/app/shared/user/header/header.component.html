@@ -1,0 +1,84 @@
+<header
+  class="w-full absolute top-0 z-10 flex justify-between items-center px-8 py-6"
+>
+  <!-- Logo -->
+  <div class="text-black font-bold text-lg flex items-center gap-2">
+    <img
+      *ngIf="isHomePage !== null"
+      [src]="isHomePage ? '/logo-w.png' : '/logo-g.png'"
+      alt="Logo"
+      class="w-40"
+    />
+  </div>
+
+  <!-- Nav links -->
+  <nav
+    *ngIf="isHomePage !== null"
+    [ngClass]="
+      (isHomePage ? 'text-white' : 'text-black') +
+      ' transition-colors duration-500'
+    "
+    class="flex gap-6 font-medium"
+  >
+    <a
+      routerLink="/"
+      #rlaHome="routerLinkActive"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [ngClass]="{
+        'border-b-2': rlaHome.isActive,
+        'border-white': isHomePage && rlaHome.isActive,
+        'border-black': !isHomePage && rlaHome.isActive
+      }"
+      class="pb-1"
+    >
+      Home
+    </a>
+
+    <a
+      routerLink="/properties"
+      #rlaProps="routerLinkActive"
+      routerLinkActive="active-link"
+      [ngClass]="{
+        'border-b-2 pb-1': rlaProps.isActive,
+        'border-white': isHomePage && rlaProps.isActive,
+        'border-black': !isHomePage && rlaProps.isActive
+      }"
+    >
+      Properties
+    </a>
+
+    <a
+      routerLink="/about"
+      #rlaAbout="routerLinkActive"
+      routerLinkActive="active-link"
+      [ngClass]="{
+        'border-b-2 pb-1': rlaAbout.isActive,
+        'border-white': isHomePage && rlaAbout.isActive,
+        'border-black': !isHomePage && rlaAbout.isActive
+      }"
+    >
+      About
+    </a>
+
+    <a
+      routerLink="/contact"
+      #rlaContact="routerLinkActive"
+      routerLinkActive="active-link"
+      [ngClass]="{
+        'border-b-2 pb-1': rlaContact.isActive,
+        'border-white': isHomePage && rlaContact.isActive,
+        'border-black': !isHomePage && rlaContact.isActive
+      }"
+    >
+      Contact
+    </a>
+  </nav>
+
+  <!-- Donate Button -->
+  <button
+    class="opacity-0 bg-black text-white px-4 py-2 rounded shadow hover:bg-gray-800"
+  >
+    Donate
+  </button>
+</header>

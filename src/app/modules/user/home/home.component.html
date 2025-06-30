@@ -1,0 +1,53 @@
+<app-header></app-header>
+<!-- Hero Section Wrapper -->
+<div
+  class="relative min-h-screen bg-cover bg-center flex items-center justify-center px-6"
+  style="
+    background-image: url('https://www.omgproperties.in/wp-content/uploads/2022/10/newsovereign-new-elevation-1200x600.jpg');
+  "
+>
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/80"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl text-center text-white">
+    <!-- Subheading -->
+    <h2
+      class="text-lg sm:text-xl font-medium mb-4 tracking-wider uppercase merriweather"
+    >
+      Your Trusted Real Estate Partner in
+      <span class="text-yellow-400 font-semibold">Palakkad</span>
+    </h2>
+
+    <!-- Main Heading -->
+    <h1 class="text-3xl md:text-6xl font-extrabold leading-tight">
+      <span class="text-yellow-400">Havnview Properties</span>
+    </h1>
+
+    <!-- Description -->
+    <p
+      class="text-gray-200 mt-6 text-md pt-serif-regular max-w-2xl mx-auto leading-relaxed poppins-regular"
+    >
+      From premium homes to budget-friendly flats and land, we offer complete
+      real estate solutions in Palakkad — now expanding across Kerala. Let’s
+      build your dream, together.
+    </p>
+
+    <!-- Buttons -->
+    <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+      <!-- <button
+        class="text-yellow-400 hover:text-white transition-all border-2 border-yellow-400 px-6 py-3 rounded-lg font-semibold shadow-md hover:scale-105 duration-300"
+      >
+        Explore Homes
+      </button> -->
+      <a
+        routerLink="/register"
+        class="bg-white text-black hover:text-yellow-500 px-6 py-3 rounded-lg font-semibold shadow-md hover:scale-105 duration-300"
+      >
+        Register Now
+      </a>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
