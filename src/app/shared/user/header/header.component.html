@@ -15,7 +15,7 @@
   <nav
     *ngIf="isHomePage !== null"
     [ngClass]="
-      (isHomePage ? 'text-white' : 'text-black') +
+      (isHomePage ? 'text-white' : 'text-[#805F3E]') +
       ' transition-colors duration-500'
     "
     class="flex gap-6 font-medium"
@@ -28,7 +28,7 @@
       [ngClass]="{
         'border-b-2': rlaHome.isActive,
         'border-white': isHomePage && rlaHome.isActive,
-        'border-black': !isHomePage && rlaHome.isActive
+        'border-[#805F3E]': !isHomePage && rlaHome.isActive
       }"
       class="pb-1"
     >
@@ -42,7 +42,7 @@
       [ngClass]="{
         'border-b-2 pb-1': rlaProps.isActive,
         'border-white': isHomePage && rlaProps.isActive,
-        'border-black': !isHomePage && rlaProps.isActive
+        'border-[#805F3E]': !isHomePage && rlaProps.isActive
       }"
     >
       Properties
@@ -55,7 +55,7 @@
       [ngClass]="{
         'border-b-2 pb-1': rlaAbout.isActive,
         'border-white': isHomePage && rlaAbout.isActive,
-        'border-black': !isHomePage && rlaAbout.isActive
+        'border-[#805F3E]': !isHomePage && rlaAbout.isActive
       }"
     >
       About
@@ -68,7 +68,7 @@
       [ngClass]="{
         'border-b-2 pb-1': rlaContact.isActive,
         'border-white': isHomePage && rlaContact.isActive,
-        'border-black': !isHomePage && rlaContact.isActive
+        'border-[#805F3E]': !isHomePage && rlaContact.isActive
       }"
     >
       Contact
