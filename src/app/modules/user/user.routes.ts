@@ -4,6 +4,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { AboutComponent } from "./about/about.component";
 import { PropertiesComponent } from "./properties/properties.component";
 import { RegisterComponent } from "./register/register.component";
+import { AuthComponent } from "../../core/authentication/auth/auth.component";
 
 
 export const USER_ROUTES: Routes = [
@@ -11,5 +12,9 @@ export const USER_ROUTES: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'properties', component: PropertiesComponent },
+  {
+    path: 'auth/:mode',
+    component: AuthComponent
+  },
   { path: 'register', component: RegisterComponent },
 ];
