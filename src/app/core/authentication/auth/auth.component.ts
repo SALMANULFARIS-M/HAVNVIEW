@@ -10,14 +10,14 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './auth.component.css'
 })
 export class AuthComponent implements OnInit {
- authForm!: FormGroup;
+   authForm!: FormGroup;
   mode: 'login' | 'register' = 'login';
 
   constructor(private route: ActivatedRoute, private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.mode = params['mode'] === 'register' ? 'register' : 'login';
+    this.route.data.subscribe(data => {
+      this.mode = data['mode'] === 'register' ? 'register' : 'login';
       this.buildForm();
     });
   }
