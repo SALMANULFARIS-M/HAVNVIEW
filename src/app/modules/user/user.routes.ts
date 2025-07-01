@@ -12,7 +12,11 @@ export const USER_ROUTES: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'properties', component: PropertiesComponent },
   {
-    path: 'auth/:mode',
-    component: AuthComponent
-  },
+    path: 'auth',
+    children: [
+      { path: 'login', component: AuthComponent, data: { mode: 'login' } },
+      { path: 'register', component: AuthComponent, data: { mode: 'register' } }
+    ]
+  }
+
 ];
