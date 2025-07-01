@@ -9,8 +9,9 @@ import { filter } from 'rxjs';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent implements OnInit {
- isHomePage = false;
+export class HeaderComponent {
+  isHomePage = false;
+  isMenuOpen = false;
 
   constructor(
     private router: Router,
@@ -28,20 +29,12 @@ export class HeaderComponent implements OnInit {
         this.isHomePage = this.router.url === '/';
         this.cdr.detectChanges();
       });
- this.isHomePage = this.router.url === '/';
-  this.cdr.detectChanges();
+    this.isHomePage = this.router.url === '/';
+    this.cdr.detectChanges();
   }
 
-  ngOnInit(): void {
-    // this.isBrowser = isPlatformBrowser(this.platformId);
-
-    // if (this.isBrowser) {
-    //   this.router.events
-    //     .pipe(filter(event => event instanceof NavigationEnd))
-    //     .subscribe(() => {
-    //       this.isHomePage = this.router.url === '/';
-    //       this.cdr.detectChanges();
-    //     });
-    // }
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
+
 }

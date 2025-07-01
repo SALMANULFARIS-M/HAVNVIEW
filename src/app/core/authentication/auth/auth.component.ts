@@ -5,15 +5,15 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 
 @Component({
   selector: 'app-auth',
-  imports: [RouterModule,CommonModule,ReactiveFormsModule],
+  imports: [RouterModule, CommonModule, ReactiveFormsModule],
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css'
 })
 export class AuthComponent implements OnInit {
-   authForm!: FormGroup;
+  authForm!: FormGroup;
   mode: 'login' | 'register' = 'login';
 
-  constructor(private route: ActivatedRoute, private fb: FormBuilder) {}
+  constructor(private route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -26,13 +26,13 @@ export class AuthComponent implements OnInit {
     this.authForm = this.fb.group(
       this.mode === 'register'
         ? {
-            name: ['', Validators.required],
-            email: ['', [Validators.required, Validators.email]],
-            phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
-          }
+          name: ['', Validators.required],
+          email: ['', [Validators.required, Validators.email]],
+          phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+        }
         : {
-            phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
-          }
+          phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
+        }
     );
   }
 
